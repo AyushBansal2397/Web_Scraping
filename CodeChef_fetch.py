@@ -34,6 +34,7 @@ def fetch(contest_id):
 	rt.withdraw()
 	dirName = filedialog.askdirectory()
 	dirName = dirName + "/CodeChef/" + contest_id
+	print(dirName)
 	rt.destroy()
 	if not os.path.exists(dirName):
 		os.makedirs(dirName)
@@ -50,10 +51,9 @@ def fetch(contest_id):
 	tr = tbody.find_all("tr")
 	for i in tr:
 		i = i.find_all("td")
-		i = str(i[1])
-		i = i[4:len(i)-5]
+		i = i[1].get_text()
 		problem_id.append(i)
-
+	i = 0
 	print("Fetching Testcases & making sinpets")
 	for i in range(len(problems)):
 		print("\t" + problems[i])
@@ -83,7 +83,7 @@ def fetch(contest_id):
 
 		print("\t\t|-Fetching Testcases")
 		testcases = pro_soup.find_all("div", class_="content")[1].get_text()
-		
+
 		if "Explanation" in testcases:
 			testcases = testcases.split("Explanation")[0]
 		else:
@@ -95,12 +95,13 @@ def fetch(contest_id):
 			testcases = testcases.split("Example")[1]
 
 		testcases = testcases.split("### Example Output")
-		Str = "\n```"
+		Str = "\n```\n"
 		with open(Dir + "/input.txt", "w") as file:
 			file.write(testcases[0].split(Str)[1])
 		with open(Dir + "/output.txt", "w") as file:
 			file.write(testcases[1].split(Str)[1])
 		print()
+
 	print("Fetching Completed!!")
 
 if __name__ == '__main__':
