@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup as bs
 import requests as req
 from tkinter import *
 from colorama import Fore, Style
-import matplotlib.plt as plt
+import matplotlib.pyplot as plt
 
 root = Tk()
 root.title("CodeForces")
