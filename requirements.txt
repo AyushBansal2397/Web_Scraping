@@ -7,7 +7,7 @@ cycler==0.10.0
 debtcollector==1.21.0
 dnspython==1.16.0
 engineering-notation==0.6.0
-eventlet==0.25.1
+eventlet==0.31.0
 fasteners==0.15
 greenlet==0.4.15
 idna==2.8
