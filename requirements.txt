@@ -19,7 +19,7 @@ monotonic==1.5
 msgpack==0.6.1
 netaddr==0.7.19
 netifaces==0.10.9
-numpy==1.17.1
+numpy==1.22.0
 os-win==4.3.0
 oslo.concurrency==3.29.1
 oslo.config==6.11.1
